@@ -13,7 +13,6 @@ function isLoggedIn (req, res, next) {
 }
 router.get('/', isLoggedIn, function(req, res, next) {
     Account.find(function (err, users) {
-        // if we have an error
         if (err) {
             console.log(err);
             res.end(err);
